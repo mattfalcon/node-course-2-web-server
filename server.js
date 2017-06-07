@@ -12,8 +12,6 @@ hbs.registerPartials(__dirname + '/views/partials');
 //sets various express related configurations key value pair used here
 app.set('view engine', 'hbs');
 
-
-
 //next exists so u can tell express when middleware function is done
 //middleware to keep track of logs
 app.use((req, res, next)  => {
@@ -80,6 +78,12 @@ app.get('/about', (req, res) => {
        pageTitle: 'About Page'
     //    currentYear: new Date().getFullYear()
    });
+});
+
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        pageTitle: 'Projects'
+    });
 });
 
 // /bad
